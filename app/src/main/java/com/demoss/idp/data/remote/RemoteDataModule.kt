@@ -1,5 +1,10 @@
 package com.demoss.idp.data.remote
 
-import org.koin.dsl.module.module
+import com.demoss.idp.data.remote.api.apiModule
+import com.demoss.idp.data.remote.repository.remoteRepositoryModule
 
-val remoteDataModule = module {}
+val remoteDataModules = listOf(
+    apiModule,
+    remoteRepositoryModule,
+    networkModule
+)
