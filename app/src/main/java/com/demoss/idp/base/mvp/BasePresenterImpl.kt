@@ -7,6 +7,7 @@ abstract class BasePresenterImpl<in V : BaseView> : BasePresenter {
     private var view: V? = null
     private var compositeDisposable = CompositeDisposable()
 
+    @Suppress("UNCHECKED_CAST")
     override fun attachView(view: BaseView) {
         this.view = view as V
         onCreateView()

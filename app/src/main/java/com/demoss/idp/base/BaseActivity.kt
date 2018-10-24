@@ -5,9 +5,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.demoss.idp.base.mvp.BasePresenter
 import com.demoss.idp.base.mvp.BaseView
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 
-abstract class BaseActivity<Presenter : BasePresenter> : AppCompatActivity(),
-    BaseView {
+abstract class BaseActivity<Presenter : BasePresenter> : AppCompatActivity(), BaseView {
 
     abstract val presenter: Presenter
     abstract val layoutResourceId: Int
@@ -35,5 +36,10 @@ abstract class BaseActivity<Presenter : BasePresenter> : AppCompatActivity(),
 
     override fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun hideKeyboard() {
+        (getSystemService(AppCompatActivity.INPUT_METHOD_SERVICE) as InputMethodManager)
+            .hideSoftInputFromWindow((currentFocus ?: View(this)).windowToken, 0)
     }
 }
