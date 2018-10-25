@@ -24,8 +24,8 @@ abstract class BaseActivity<Presenter : BasePresenter> : AppCompatActivity(), Ba
         presenter.viewShown()
     }
 
-    override fun onPause() {
-        super.onPause()
+    override fun onStop() {
+        super.onStop()
         presenter.viewHidden()
     }
 
