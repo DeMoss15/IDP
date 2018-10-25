@@ -38,11 +38,11 @@ abstract class BaseFragment<Presenter : BasePresenter> : Fragment(), BaseView {
         super.onDestroy()
     }
 
-    override fun showToast(message: String) {
+    final override fun showToast(message: String) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
-    override fun hideKeyboard() {
+    final override fun hideKeyboard() {
         (activity?.getSystemService(AppCompatActivity.INPUT_METHOD_SERVICE) as InputMethodManager)
             .hideSoftInputFromWindow((activity?.currentFocus ?: View(context)).windowToken, 0)
     }

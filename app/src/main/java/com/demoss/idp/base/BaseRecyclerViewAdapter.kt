@@ -16,9 +16,9 @@ abstract class BaseRecyclerViewAdapter<T,
     abstract val diffUtilCallbackClazz: Class<DiffUtilCallback>?
 
     // RV Adapter functions ============================================================================================
-    override fun getItemCount(): Int = data.size
+    final override fun getItemCount(): Int = data.size
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH = viewHolderFactory(
+    final override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH = viewHolderFactory(
         LayoutInflater.from(parent.context)
             .inflate(layoutResId, parent, false)
     )
