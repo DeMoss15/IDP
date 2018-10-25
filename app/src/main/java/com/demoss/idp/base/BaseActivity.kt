@@ -34,11 +34,11 @@ abstract class BaseActivity<Presenter : BasePresenter> : AppCompatActivity(), Ba
         super.onDestroy()
     }
 
-    override fun showToast(message: String) {
+    final override fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
-    override fun hideKeyboard() {
+    final override fun hideKeyboard() {
         (getSystemService(AppCompatActivity.INPUT_METHOD_SERVICE) as InputMethodManager)
             .hideSoftInputFromWindow((currentFocus ?: View(this)).windowToken, 0)
     }

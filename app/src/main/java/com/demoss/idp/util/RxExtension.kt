@@ -7,7 +7,6 @@ import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-
 // Default schedulers ==================================================================================================
 
 fun <T> Observable<T>.setDefaultSchedulers(): Observable<T> = this.observeOn(Schedulers.io())

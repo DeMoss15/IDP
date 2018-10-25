@@ -7,32 +7,34 @@ abstract class BasePresenterImpl<in V : BaseView> : BasePresenter {
     private var view: V? = null
     private var compositeDisposable = CompositeDisposable()
 
+    // Override only for inner purposes
     @Suppress("UNCHECKED_CAST")
-    override fun attachView(view: BaseView) {
+    final override fun attachView(view: BaseView) {
         this.view = view as V
         onCreateView()
     }
 
-    override fun detachView() {
+    final override fun detachView() {
         onDestroyView()
         view = null
         compositeDisposable.dispose()
     }
 
-    override fun viewShown() {
+    final override fun viewShown() {
         onViewShown()
     }
 
-    override fun viewHidden() {
+    final override fun viewHidden() {
         compositeDisposable.clear()
         onViewHidden()
     }
 
-    open fun onCreateView() {}
+    // Not necessary to implement this funs in child
+    protected open fun onCreateView() {}
 
-    open fun onViewShown() {}
+    protected open fun onViewShown() {}
 
-    open fun onViewHidden() {}
+    protected open fun onViewHidden() {}
 
-    open fun onDestroyView() {}
+    protected open fun onDestroyView() {}
 }
