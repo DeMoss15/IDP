@@ -29,7 +29,7 @@ abstract class BasePresenterImpl<V : BaseView> : BasePresenter {
         onViewHidden()
     }
 
-    // Not necessary to implement this funs in child
+    // Not necessary to implement this functions in child
     protected open fun onCreateView() {}
 
     protected open fun onViewShown() {}
