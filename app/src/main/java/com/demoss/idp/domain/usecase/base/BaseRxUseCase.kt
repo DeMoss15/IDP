@@ -3,7 +3,7 @@ package com.demoss.idp.domain.usecase.base
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 
-abstract class BaseRxUseCase<T, Params, Source, Observer> {
+abstract class BaseRxUseCase<Params, Source, Observer> {
 
     abstract fun buildUseCaseObservable(params: Params): Source
 
