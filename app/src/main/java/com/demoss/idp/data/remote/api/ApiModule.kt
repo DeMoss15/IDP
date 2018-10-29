@@ -8,4 +8,5 @@ val apiModule = module {
     single { getApi(get()) } // API
 }
 
-private fun getApi(retrofit: Retrofit){}//: [YourApi] = retrofit.create([YourApi]::class.java)
+private fun getApi(retrofit: Retrofit) {}
+// : [YourApi] = retrofit.create([YourApi]::class.java)

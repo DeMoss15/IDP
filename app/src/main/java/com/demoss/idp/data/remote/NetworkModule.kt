@@ -2,7 +2,7 @@ package com.demoss.idp.data.remote
 
 import com.demoss.idp.Constants
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import okhttp3.*
+import okhttp3.OkHttpClient
 import org.koin.dsl.module.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
